@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        Write your own custom rich components with built-in AJAX support
+        </f:facet>
+		<rich:dataTable var="aBook" value="#{bookBean.books}">
+        	<f:facet name="header">
+        		<rich:columnGroup>
+        		<rich:column>
+        			<h:outputText value="Sid" />
+        		</rich:column>
+        		<rich:column>
+        			<h:outputText value="Name" />
+        		</rich:column>
+        		<rich:column>
+        			<h:outputText value="Author" />
+        		</rich:column>
+        		</rich:columnGroup>
+        	</f:facet>
+        	<rich:column>
+        		<h:outputText value="#{aBook.sid}" />
+        	</rich:column>
+        	<rich:column>
+        		<h:outputText value="#{aBook.name}" />
+        	</rich:column>
+        	<rich:column>
+        		<h:outputText value="#{aBook.author}" />
+        	</rich:column>
+        </rich:dataTable>
+	</rich:panel>
+</body> 
+</html>
